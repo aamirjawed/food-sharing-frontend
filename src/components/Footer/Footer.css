@@ -1,0 +1,13 @@
+.footer {
+  background-color: #ff7043;
+  padding: 15px 30px;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin: 0;
+  font-style: italic;
+  font-family: "Inter", sans-serif;
+}

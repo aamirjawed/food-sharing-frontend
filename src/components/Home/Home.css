@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.home {
+
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.hero {
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color:#ff7043;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-btn {
+  background-color: #fff;
+  color: #ff7043;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.hero-btn:hover {
+  background-color: #ffe0b2;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 5rem;
+}
+
+.feature-card {
+  background: #fff;
+  color: #333;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #ffe0b2;
+  flex: 1;
+  min-width:250px;
+
+}
+
+.feature-card h2 {
+  margin-bottom: 0.8rem;
+  color: #ff7043;
+}
