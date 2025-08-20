@@ -42,7 +42,7 @@ const Recipe = () => {
         {recipes.slice(0, visibleCount).map((item) => (
           <div className="recipe-card" key={item.id}>
             <img src={item.imageUrl} alt={item.title} className="recipe-image" />
-            <h2>{item.title}</h2>
+            <h2><Link to={`/recipes/${item.id}`} className="read-more-link">{item.title}</Link></h2>
             <p>By: {item.user?.fullName || "Unknown"}</p>
             <p>{item.instructions}... <Link to={`/recipes/${item.id}`} className="read-more-link">Read More</Link></p>
           </div>
