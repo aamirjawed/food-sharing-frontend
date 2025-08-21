@@ -8,6 +8,8 @@ import Signup from './components/Auth/SignUp/Signup'
 import Login from './components/Auth/Login/Login'
 import Recipe from './components/Recipe/Recipe'
 import RecipeDetail from './components/RecipeDetail/RecipeDetail'
+import { AuthContextProvider } from './context/AuthContext'
+// import DashboardLayout from './components/DashboardLayout/DashboardLayout'
 
 
 const router = createBrowserRouter(
@@ -18,6 +20,7 @@ const router = createBrowserRouter(
         <Route path='login' element={<Login />} />
         <Route path='recipes' element={<Recipe />} />
         <Route path='recipes/:id' element={<RecipeDetail />} />
+        {/* <Route path='/dashboard' element={<DashboardLayout />} /> */}
     </Route>
   )
 )
@@ -27,6 +30,8 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+  <AuthContextProvider>
     <RouterProvider router={router} />
+   </AuthContextProvider>
   </StrictMode>,
 )

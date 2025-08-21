@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Login.css";
 import BASE_URL from '../../../constant.js'
 import {useNavigate} from 'react-router'
+import { AuthContext } from "../../../context/AuthContext.jsx";
+
 
 const Login = () => {
 
@@ -14,29 +16,13 @@ const Login = () => {
 
   const [loading, setLoading] = useState(false)
 
+  const {setUser} = useContext(AuthContext)
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  useEffect(() => {
-    const checkAuth = async() => {
-      try {
-        const res = await fetch(`${BASE_URL}/me`, {
-          method:"GET",
-          credentials:true
-        })
-
-        if(res.ok){
-          navigate('/recipes')
-        }
-      } catch (error) {
-        console.log(error)
-        console.log("Auth check failed:");
-      }
-    }
-    checkAuth()
-  }, [navigate])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,6 +48,7 @@ const Login = () => {
           email: "",
           password: "",
         })
+        setUser(data)
         setLoading(false)
 
         alert("login success")
