@@ -9,7 +9,9 @@ import Login from './components/Auth/Login/Login'
 import Recipe from './components/Recipe/Recipe'
 import RecipeDetail from './components/RecipeDetail/RecipeDetail'
 import { AuthContextProvider } from './context/AuthContext'
-// import DashboardLayout from './components/DashboardLayout/DashboardLayout'
+import About from './components/About/About'
+import MyRecipe from './components/MyRecipe/MyRecipe'
+
 
 
 const router = createBrowserRouter(
@@ -20,7 +22,8 @@ const router = createBrowserRouter(
         <Route path='login' element={<Login />} />
         <Route path='recipes' element={<Recipe />} />
         <Route path='recipes/:id' element={<RecipeDetail />} />
-        {/* <Route path='/dashboard' element={<DashboardLayout />} /> */}
+        <Route path='about' element={<About />} />
+        <Route path='my-recipes' element={<MyRecipe />} />
     </Route>
   )
 )

@@ -7,6 +7,7 @@
 
   margin: 2rem auto;
   text-align: center;
+  margin-top: 7rem;
 }
 
 .hero {
@@ -60,6 +61,10 @@
   flex: 1;
   min-width:250px;
 
+}
+
+.feature-card:hover{
+  background: #ffe0b2;
 }
 
 .feature-card h2 {
