@@ -11,6 +11,7 @@ import RecipeDetail from './components/RecipeDetail/RecipeDetail'
 import { AuthContextProvider } from './context/AuthContext'
 import About from './components/About/About'
 import MyRecipe from './components/MyRecipe/MyRecipe'
+import MyCollections from './components/MyCollections/MyCollections'
 
 
 
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
         <Route path='recipes/:id' element={<RecipeDetail />} />
         <Route path='about' element={<About />} />
         <Route path='my-recipes' element={<MyRecipe />} />
+        <Route path='my-collections' element={<MyCollections />}/>
     </Route>
   )
 )

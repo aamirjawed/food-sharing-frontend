@@ -28,7 +28,7 @@ const DashboardLayout = () => {
                 <li><span>Welcome,</span><strong>{user.fullName}</strong></li>
                 <li><Link to="profile">Edit Profile</Link></li>
                 <li><Link to="/my-recipes">My Recipes</Link></li>
-                <li><Link to="collections">My Collections</Link></li>
+                <li><Link to="my-collections">My Collections</Link></li>
                 <li><Link to="reviews">My Reviews</Link></li>
                 <li><Link to="/logout">Log out</Link></li>
               </>
