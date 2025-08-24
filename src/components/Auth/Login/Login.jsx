@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useEffect, useState } from "react";
+import  { useContext, useEffect, useState } from "react";
 import "./Login.css";
 import BASE_URL from '../../../constant.js'
 import {useNavigate} from 'react-router'
@@ -7,6 +7,7 @@ import { AuthContext } from "../../../context/AuthContext.jsx";
 
 
 const Login = () => {
+  const {setUser} = useContext(AuthContext)
 
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
@@ -16,7 +17,7 @@ const Login = () => {
 
   const [loading, setLoading] = useState(false)
 
-  const {setUser} = useContext(AuthContext)
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,7 +39,7 @@ const Login = () => {
           
           email: formData.email,
           password:formData.password
-        })
+        }) 
       })
 
       const data = await response.json()
@@ -48,13 +49,17 @@ const Login = () => {
           email: "",
           password: "",
         })
-        setUser(data)
+        setUser(data.data)
         setLoading(false)
 
         alert("login success")
         navigate('/recipes')
       }else{
         console.log("Something went wrong while login")
+        setFormData({
+          email:"",
+          password:""
+        })
       }
       
     } catch (error) {

@@ -62,6 +62,7 @@ const MyCollections = () => {
         alert(data.message || "Failed to create collection");
       }
     } catch (err) {
+      console.log(err)
       alert("Something went wrong while creating collection");
     } finally {
       setCreating(false);

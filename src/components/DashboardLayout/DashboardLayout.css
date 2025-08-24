@@ -74,6 +74,7 @@
   margin: 15px 0;
 }
 
+
 .dashboard-sidebar nav ul li a {
   color: #fff;
   text-decoration: none;
@@ -87,6 +88,29 @@
   background: #ffe0b2;
   color: #ff7043;
 }
+
+/* Logout Button */
+.logout-btn {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #e74c3c; /* red danger */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #ff5c5c; /* lighter red on hover */
+}
+
+
 
 .dashboard-sidebar nav ul li strong {
   display: block;

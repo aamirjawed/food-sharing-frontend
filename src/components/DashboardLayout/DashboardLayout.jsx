@@ -1,11 +1,17 @@
 import { useContext, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import './DashboardLayout.css';
 
 const DashboardLayout = () => {
-  const { user } = useContext(AuthContext);
+  const navigate = useNavigate()
+  const { user, logout } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
+
+  const handleLogout = async () => {
+    await logout()
+    navigate('/login')
+  }
 
   return (
     <>
@@ -29,8 +35,8 @@ const DashboardLayout = () => {
                 <li><Link to="profile">Edit Profile</Link></li>
                 <li><Link to="/my-recipes">My Recipes</Link></li>
                 <li><Link to="my-collections">My Collections</Link></li>
-                <li><Link to="reviews">My Reviews</Link></li>
-                <li><Link to="/logout">Log out</Link></li>
+               
+                <button onClick={handleLogout} className="logout-btn">Log out</button>
               </>
             ) : (
               <>

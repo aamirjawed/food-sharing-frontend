@@ -112,8 +112,10 @@ const fetchCollections = async () => {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
-  if (!recipes || recipes.length === 0) return <p>No recipes found.</p>;
+  if (loading) return <p className="center-message">Loading...</p>;
+if (!recipes || recipes.length === 0)
+  return <p className="center-message">No recipes found.</p>;
+
 
   return (
     <div className="recipe-section">

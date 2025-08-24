@@ -1,18 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* --- Container --- */
 .collections-container {
   max-width: 600px;
-  margin: 7rem auto 25px auto;
+  margin: 7rem auto;
   padding: 20px;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #ddd;
+  font-family: sans-serif;
 }
 
 /* --- Titles --- */
 .collections-title {
   margin-bottom: 20px;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #ff7043;
 }
 
@@ -20,7 +27,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 /* --- Lists --- */
@@ -30,31 +37,22 @@
 }
 
 .collection-card {
-  padding: 15px;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  background: #f9f9f9;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.2s ease;
-  flex-wrap: wrap;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  background: #fafafa;
 }
 
 .collection-card:hover {
-  background: #ffe0b2;
-}
-
-.collection-count {
-  font-size: 0.9rem;
-  color: #666;
+  background: #fff3e6;
 }
 
 .collections-empty {
   text-align: center;
-  color: #888;
+  color: #777;
   font-style: italic;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 /* --- Loading & Error --- */
@@ -65,146 +63,78 @@
 }
 
 .collections-error {
-  color: #e74c3c;
+  color: red;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-/* --- Retry Button --- */
-.retry-btn {
-  display: block;
-  margin: 0 auto;
-  padding: 8px 16px;
-  background-color: #ff7043;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
+/* --- Buttons (General) --- */
+button {
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.2s ease;
-}
-
-.retry-btn:hover {
-  background-color: #e55b2b;
-}
-
-/* --- Create Collection --- */
-.create-collection-btn {
-  padding: 8px 14px;
-  background-color: #ff7043;
-  color: #fff;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 4px;
   font-size: 0.9rem;
-  transition: background 0.2s ease;
+  padding: 6px 12px;
 }
 
-.create-collection-btn:hover {
-  background-color: #e55b2b;
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
+/* --- Orange Action Buttons --- */
+.create-collection-btn,
+.retry-btn,
+.create-btn,
+.dropdown-btn {
+  background: #ff7043;
+  color: #fff;
+  margin: 1rem;
+}
+
+.create-collection-btn:hover,
+.retry-btn:hover,
+.create-btn:hover,
+.dropdown-btn:hover {
+  background: #e55b2b;
+}
+
+/* --- Remove Button --- */
+.remove-button {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.remove-button:hover {
+  background: #c0392b;
+}
+
+/* --- Create Form --- */
 .create-collection-form {
   display: flex;
-  gap: 10px;
-  margin: 15px 0;
-  padding: 12px;
-  background: #fafafa;
-  border: 1px solid #eee;
-  border-radius: 8px;
+  gap: 8px;
+  margin: 10px 0 15px 0;
 }
 
 .collection-input {
   flex: 1;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 0.95rem;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .collection-input:focus {
-  outline: none;
   border-color: #ff7043;
-  box-shadow: 0 0 4px rgba(255, 112, 67, 0.4);
-}
-
-/* Form Buttons */
-.create-btn,
-.cancel-btn {
-  padding: 8px 14px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.2s ease;
-}
-
-.create-btn {
-  background-color: #ff7043;
-  color: #fff;
-}
-
-.create-btn:hover {
-  background-color: #e55b2b;
-}
-
-.create-btn:disabled {
-  background-color: #bbb;
-  cursor: not-allowed;
-}
-
-.cancel-btn {
-  background-color: #ddd;
-  color: #333;
-}
-
-.cancel-btn:hover {
-  background-color: #bbb;
+  outline: none;
 }
 
 /* --- Dropdown --- */
-.collection-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.dropdown-btn {
-  padding: 6px 12px;
-  font-size: 0.8rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background-color: #ff7043;
-  color: #fff;
-  transition: background 0.2s ease;
-}
-
-.dropdown-btn:hover {
-  background-color: #e55b2b;
-}
-
-.open-link {
-  font-size: 0.8rem;
-  color: #ff7043;
-  text-decoration: none;
-}
-
-.open-link:hover {
-  text-decoration: underline;
-}
-
-/* Dropdown Recipes */
 .recipes-dropdown {
   margin-top: 10px;
   padding: 10px;
-  background: #fff7f2;
-  border: 1px solid #f5c6a5;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  animation: fadeIn 0.3s ease;
-  width: 100%;
+  background: #fffaf6;
+  border: 1px solid #f2c5a5;
+  border-radius: 6px;
 }
 
 .recipes-dropdown ul {
@@ -213,39 +143,18 @@
   margin: 0;
 }
 
-.recipes-dropdown a {
-  margin: 8px 0;
-  padding: 8px 12px;
+.recipe-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 6px 0;
+}
+
+.recipe-link {
   text-decoration: none;
-  color: black;
+  color: #333;
 }
 
-.recipes-dropdown a:hover {
-  background: #ffe0b2;
-}
-
-/* Loading & Empty inside dropdown */
-.recipes-dropdown p {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #666;
-  padding: 10px 0;
-  font-style: italic;
-}
-
-.remove-button{
-  padding: 6px 12px;
-  font-size: 0.8rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background-color: red;
-  color: #fff;
-}
-
-.remove-button:hover{
-  background: red;
+.recipe-link:hover {
+  color: #ff7043;
 }

@@ -25,7 +25,6 @@
   margin-top: 1.2rem;
 }
 
-
 /* Recipe image */
 .recipe-card .recipe-image {
   width: 100%;
@@ -60,14 +59,13 @@
 }
 
 /* read more link  */
-
-.read-more-link{
+.read-more-link {
   text-decoration: none;
   color: #ffa270;
 }
 
 /* load more button */
-.load-more-btn{
+.load-more-btn {
   display: block;
   margin: 1.5rem auto;
   padding: 1rem 2rem;
@@ -79,15 +77,15 @@
   cursor: pointer;
 }
 
-.load-more-btn:hover{
+.load-more-btn:hover {
   background-color: #ffa270;
 }
 
-/* Save button */
+/* Save button (card + modal both use this) */
 .save-btn {
   margin-top: 10px;
   padding: 8px 14px;
-  background-color: #ff7043;
+  background-color: #ff7043; /* main orange */
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -97,7 +95,7 @@
 }
 
 .save-btn:hover {
-  background-color: #e55b2b;
+  background-color: #ffa270; /* lighter orange hover */
 }
 
 .save-btn:disabled {
@@ -146,27 +144,14 @@
   border-radius: 6px;
 }
 
-/* Buttons */
+/* Modal buttons container */
 .modal-actions {
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
 
-.save-btn {
-  padding: 8px 14px;
-  background-color: #ff7043;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.save-btn:hover {
-  background-color: #e55b2b;
-}
-
+/* Cancel button (grey style) */
 .cancel-btn {
   padding: 8px 14px;
   background-color: #aaa;
@@ -174,10 +159,18 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 0.9rem;
 }
 
 .cancel-btn:hover {
   background-color: #888;
+}
+
+.center-message {
+  text-align: center;
+  margin-top: 20rem;
+  font-size: 1rem;
+  color: #555;
 }
 
 

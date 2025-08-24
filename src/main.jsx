@@ -12,6 +12,7 @@ import { AuthContextProvider } from './context/AuthContext'
 import About from './components/About/About'
 import MyRecipe from './components/MyRecipe/MyRecipe'
 import MyCollections from './components/MyCollections/MyCollections'
+import EditProfileModal from './components/EditProfileModal/EditProfileModal'
 
 
 
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
         <Route path='about' element={<About />} />
         <Route path='my-recipes' element={<MyRecipe />} />
         <Route path='my-collections' element={<MyCollections />}/>
+        <Route path='profile' element={<EditProfileModal />} />
     </Route>
   )
 )

@@ -28,8 +28,10 @@ const RecipeDetail = () => {
     if (id) recipeDetailById();
   }, [id]);
 
-  if (loading) return <p>Loading recipe...</p>;
-  if (!recipeByID) return <p>No recipe data available</p>;
+  if (loading) return <p className="center-message">Loading...</p>;
+if (!recipeByID || recipeByID.length === 0)
+  return <p className="center-message">No Recipe data found.</p>;
+
 
   return (
     <div className="recipe-detail">

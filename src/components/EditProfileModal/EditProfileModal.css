@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.edit-profile {
+  max-width: 400px;
+  margin: 10rem auto 25px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.edit-profile h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Each row: input + button */
+.field-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+/* Inputs */
+.field-row input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Buttons */
+.field-row button {
+  padding: 8px 12px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.field-row button:hover {
+  background: #0056b3;
+}
+
+.field-row button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}

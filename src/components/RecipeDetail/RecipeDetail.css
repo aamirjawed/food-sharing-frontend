@@ -50,3 +50,11 @@
   font-size: 14px;
   color: #444;
 }
+
+
+.center-message {
+  text-align: center;
+  margin-top: 20rem;
+  font-size: 1rem;
+  color: #555;
+}
