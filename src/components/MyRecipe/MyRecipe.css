@@ -12,12 +12,15 @@
   padding: 0 2rem;
 }
 
+/* Top controls container (for Add Recipe button when recipes exist) */
+.top-controls {
+  display: flex;
+  justify-content: flex-end; /* button on right */
+  margin-bottom: 1.5rem;
+}
+
 /* Add recipe button */
 .create-recipe-button {
-  display: block;
-  width: fit-content;
-  margin-left: auto;
-  margin-bottom: 1.5rem;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
@@ -27,19 +30,30 @@
   border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
+  transition: background 0.2s ease-in-out;
 }
 
 .create-recipe-button:hover {
   background-color: #ffa270;
-  text-decoration: none;
+}
+
+/* No recipes container */
+.no-recipes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* horizontal center */
+  justify-content: center; /* vertical center */
+  min-height: 50vh;
+  gap: 1rem;
+  text-align: center;
 }
 
 /* Container for recipe cards */
 .recipe-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-top: -2rem;
   gap: 25px;
+  margin-top: 1rem;
 }
 
 /* Individual recipe card */
@@ -50,10 +64,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 1.2rem;
   border: 1px solid #ddd;
   cursor: pointer;
-  min-height: 360px; /* ensures equal height cards */
+  min-height: 360px;
 }
 
 /* Recipe image */
@@ -83,11 +96,6 @@
   line-height: 1.4;
 }
 
-.recipe-card .recipe-author {
-  font-weight: 500;
-  color: #ff7043;
-}
-
 /* Read more link */
 .read-more-link {
   text-decoration: none;
@@ -96,17 +104,17 @@
 
 /* Delete button */
 .recipe-card button {
-  margin: auto 1rem 1rem 1rem; /* pushes it to the bottom */
+  margin: 0 1rem 1rem 1rem;
   padding: 0.6rem 1rem;
   font-size: 0.9rem;
   font-weight: 600;
-  background-color: #e74c3c; /* danger red */
+  background-color: #e74c3c;
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  margin-top: auto;
   transition: background 0.2s ease-in-out;
-  margin-top: auto; /* ensures stays at bottom */
 }
 
 .recipe-card button:hover {
@@ -130,14 +138,6 @@
   background-color: #ffa270;
 }
 
-.center-message {
-  text-align: center;
-  margin-top: 20rem;
-  font-size: 1rem;
-  color: #555;
-}
-
-
 /* Responsive */
 @media (max-width: 1024px) {
   .recipe-list {
@@ -151,5 +151,17 @@
   }
   .recipe-card .recipe-image {
     height: 150px;
+  }
+
+  .top-controls {
+    justify-content: center; /* button centered on mobile */
+  }
+
+  .no-recipes-container {
+    align-items: center;
+  }
+
+  .no-recipes-container button {
+    align-self: center;
   }
 }

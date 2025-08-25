@@ -12,6 +12,7 @@ const CreateRecipeModal = ({ onClose, onSave }) => {
     prepTime: "",
   });
   const [image, setImage] = useState(null); 
+  const [saving, setSaving] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,8 +28,8 @@ const CreateRecipeModal = ({ onClose, onSave }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData, image);
 
+    setSaving(true);
     try {
       const data = new FormData(); 
       data.append("title", formData.title);
@@ -49,22 +50,21 @@ const CreateRecipeModal = ({ onClose, onSave }) => {
         const result = await response.json();
         console.log("Recipe created:", result);
 
-        if (onSave) onSave(result);
-        onClose();
+        if (onSave) onSave(result); 
+        onClose(); // close modal
       } else {
         console.error("Failed to create recipe:", await response.text());
       }
     } catch (error) {
       console.error("Error creating recipe:", error);
+    } finally {
+      setSaving(false); // reset button
     }
   };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div
-        className="modal-content"
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}>
           ✖
         </button>
@@ -82,7 +82,7 @@ const CreateRecipeModal = ({ onClose, onSave }) => {
 
           <textarea
             name="ingredients"
-            placeholder="Ingredients (comma separated or list)"
+            placeholder="Ingredients"
             value={formData.ingredients}
             onChange={handleChange}
             rows={4}
@@ -133,7 +133,6 @@ const CreateRecipeModal = ({ onClose, onSave }) => {
             required
           />
 
-          {/* ✅ Image Upload */}
           <input
             type="file"
             name="image"
@@ -141,8 +140,8 @@ const CreateRecipeModal = ({ onClose, onSave }) => {
             onChange={handleFileChange}
           />
 
-          <button type="submit" className="save-btn">
-            Save Recipe
+          <button type="submit" className="save-btn" disabled={saving}>
+            {saving ? "Saving..." : "Save Recipe"}
           </button>
         </form>
       </div>
