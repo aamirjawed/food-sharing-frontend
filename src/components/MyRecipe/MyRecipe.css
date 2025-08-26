@@ -12,10 +12,10 @@
   padding: 0 2rem;
 }
 
-/* Top controls container (for Add Recipe button when recipes exist) */
+
 .top-controls {
   display: flex;
-  justify-content: flex-end; /* button on right */
+  justify-content: flex-end;
   margin-bottom: 1.5rem;
 }
 
@@ -30,7 +30,9 @@
   border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s ease-in-out;
+  margin-bottom: -2rem;
+  margin-top: 1rem;
+  margin-right: 2.3rem;
 }
 
 .create-recipe-button:hover {
@@ -41,8 +43,8 @@
 .no-recipes-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* horizontal center */
-  justify-content: center; /* vertical center */
+  align-items: center;
+  justify-content: center;
   min-height: 50vh;
   gap: 1rem;
   text-align: center;
@@ -154,7 +156,7 @@
   }
 
   .top-controls {
-    justify-content: center; /* button centered on mobile */
+    justify-content: center;
   }
 
   .no-recipes-container {
